@@ -31,9 +31,32 @@ body {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+  position: relative;
+  transition: transform 0.5 linear;
 }
 .circle-container {
   position: fixed;
   top: -100px;
   left: -100px;
+}
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  background: transparent;
+  border: none;
+  font-size: 27px;
+  color: #fff;
+}
+.circle button:focus {
+  outline: none;
+}
+.circle #open {
+  left: 60%;
+}
+.circle #close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
 }/*# sourceMappingURL=style.css.map */
