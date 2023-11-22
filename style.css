@@ -16,14 +16,21 @@ body {
 .container {
   background-color: #fafafa;
   transform-origin: top left;
-  min-height: 100vh;
   width: 100vw;
-  transition: 0.4s linear;
+  height: 100vh;
   padding: 50px;
+  transition: 0.5s linear;
 }
-
-.show-nav {
+.container.show-nav {
   transform: rotate(-20deg);
+  transition: 0.5s linear;
+}
+.container.show-nav .circle {
+  transform: rotate(200deg);
+}
+.container + nav li {
+  transform: translateX(0);
+  transition-delay: 2s;
 }
 
 .circle {
@@ -32,7 +39,7 @@ body {
   width: 200px;
   border-radius: 50%;
   position: relative;
-  transition: transform 0.5 linear;
+  transition: 0.5s linear;
 }
 .circle-container {
   position: fixed;
@@ -48,15 +55,58 @@ body {
   border: none;
   font-size: 27px;
   color: #fff;
+  cursor: pointer;
 }
 .circle button:focus {
   outline: none;
 }
-.circle #open {
+
+#open {
   left: 60%;
 }
-.circle #close {
-  top: 60%;
-  transform: rotate(90deg);
+
+#close {
+  top: 50%;
+  font-size: 35px;
+  transform: rotate(180deg);
   transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.content h1 {
+  margin: 0;
+}
+.content small {
+  color: #555;
+  font-style: italic;
+  font-weight: 500;
+}
+.content p {
+  color: #333;
+}
+
+nav {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  z-index: 100;
+}
+nav ul {
+  padding-left: 30px;
+}
+nav ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  transform: translateX(-150%);
+  transition: transform 0.5s ease;
+}
+nav ul li i {
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

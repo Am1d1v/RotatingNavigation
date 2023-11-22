@@ -15,13 +15,24 @@ body
 .container
     background-color: #fafafa
     transform-origin: top left
-    min-height: 100vh
     width: 100vw
-    transition: 0.4s linear
+    height: 100vh
     padding: 50px
+    transition: 0.5s linear
+    &.show-nav
+        transform: rotate(-20deg) 
+        transition: 0.5s linear
+        & .circle
+            transform: rotate(200deg)   
+            
+                
+    & + nav li
+        transform: translateX(0)
+        transition-delay: 2s
 
-.show-nav
-    transform: rotate(-20deg)
+
+
+
     
 .circle
     background-color: #484479
@@ -29,11 +40,11 @@ body
     width: 200px
     border-radius: 50%
     position: relative
-    transition: transform 0.5 linear
+    transition: 0.5s linear
     &-container   
         position: fixed
         top: -100px
-        left: -100px
+        left: -100px        
     button
         position: absolute
         top: 50%
@@ -43,13 +54,54 @@ body
         border: none
         font-size: 27px
         color: #fff
+        cursor: pointer
         &:focus
             outline: none
-    #open
-        left: 60%
-    #close
-        top: 60%
-        transform: rotate(90deg)
-        transform-origin: top left
+        
+#open
+    left: 60%
+#close
+    top: 50%
+    font-size: 35px
+    transform: rotate(180deg)
+    transform-origin: top left
+
+    
+
+.content
+    max-width: 1000px
+    margin: 50px auto
+    h1
+        margin: 0
+    small
+        color: #555
+        font-style: italic
+        font-weight: 500    
+    p
+        color: #333
+
+nav
+    position: fixed
+    bottom: 50px
+    left: 0
+    z-index: 100
+    ul
+        padding-left: 30px
+        li
+            list-style: none
+            display: flex
+            flex-direction: column
+            gap: 15px
+            text-transform: uppercase
+            color: #fff
+            transform: translateX(-150%)
+            transition: transform 0.5s ease
+            i
+                font-size: 20px
+      
+        
+
+
+
 
 
